@@ -1,3 +1,3 @@
 export default function(){
-  return '芳芳的教程'
-}
+	return '方方的教程'
+	}
