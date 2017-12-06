@@ -13,5 +13,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-	"homepage":"https://gjandsh.github.io/webpack-demo2/"
+	"homepage":"https://gjandsh.github.io/webpack-demo2/build"
 }
