@@ -14,7 +14,9 @@ class App extends Component {
 				}
 		}
   render() {
-		let todos = this.state.todoList.map((item,index)=>{
+		let todos = this.state.todoList
+		.filter((item)=>!item.deleted)
+		.map((item,index)=>{
 				return (
 					<li key={index}>
 						<TodoItem todo={item} 
@@ -32,7 +34,7 @@ class App extends Component {
 					onChange = {this.changeTitle.bind(this)}
 					onSubmit = {this.addTodo.bind(this)}/>
 				</div>
-				<ol>
+				<ol className="todoList">
 					{todos}
 				</ol>
 			</div>
@@ -42,8 +44,8 @@ class App extends Component {
 		todo.status = todo.status === 'completed' ?'':'completed'
 		this.setState(this.state)
 	}
-	delete(event,todo){
-		todo.delete = true
+	delete(e,todo){
+		todo.deleted = true
 		this.setState(this.state)
 	}
 	changeTitle(event){
